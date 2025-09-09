@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简介卡片</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="editor-panel">
+            <h2>自定义你的名片</h2>
+            
+            <div class="form-group">
+                <label for="name">姓名</label>
+                <input type="text" id="name" placeholder="请输入姓名" value="张三">
+            </div>
+            
+            <div class="form-group">
+                <label for="title">职位</label>
+                <input type="text" id="title" placeholder="请输入职位" value="前端开发工程师">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">邮箱</label>
+                <input type="email" id="email" placeholder="请输入邮箱" value="zhangsan@example.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">电话</label>
+                <input type="tel" id="phone" placeholder="请输入电话" value="13800138000">
+            </div>
+            
+            <div class="form-group">
+                <label for="wechat">微信</label>
+                <input type="text" id="wechat" placeholder="请输入微信号" value="zhangsan123">
+            </div>
+            
+            <div class="form-group">
+                <label for="description">个人简介</label>
+                <textarea id="description" placeholder="请输入个人简介">热爱编程，专注于前端开发，擅长React和Vue框架</textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="theme">主题颜色</label>
+                <select id="theme">
+                    <option value="blue">蓝色主题</option>
+                    <option value="green">绿色主题</option>
+                    <option value="purple">紫色主题</option>
+                    <option value="orange">橙色主题</option>
+                </select>
+            </div>
+            
+            <button id="download-btn" class="download-btn">下载名片</button>
+        </div>
+        
+        <div class="card-preview">
+            <div class="card" id="card">
+                <div class="card-header">
+                    <h1 id="card-name">张三</h1>
+                    <h2 id="card-title">前端开发工程师</h2>
+                </div>
+                
+                <div class="card-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="icon">📧</span>
+                            <span id="card-email">zhangsan@example.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="icon">📱</span>
+                            <span id="card-phone">13800138000</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="icon">💬</span>
+                            <span id="card-wechat">zhangsan123</span>
+                        </div>
+                    </div>
+                    
+                    <div class="description">
+                        <p id="card-description">热爱编程，专注于前端开发，擅长React和Vue框架</p>
+                    </div>
+                </div>
+                
+                <div class="card-footer">
+                    <div class="qr-code">
+                        <div class="qr-placeholder">二维码区域</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
