@@ -102,25 +102,46 @@ body {
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 0%, transparent 100%);
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.card > * {
+    position: relative;
+    z-index: 2;
 }
 
 .card-header {
     text-align: center;
     margin-bottom: 30px;
     padding-bottom: 20px;
-    border-bottom: 2px solid #f0f0f0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .card-header h1 {
     font-size: 28px;
     color: #333;
     margin-bottom: 8px;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
 }
 
 .card-header h2 {
     font-size: 18px;
     color: #666;
     font-weight: 400;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
 }
 
 .card-content {
@@ -136,8 +157,9 @@ body {
     align-items: center;
     margin-bottom: 15px;
     padding: 10px;
-    background: #f8f9fa;
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 8px;
+    backdrop-filter: blur(10px);
 }
 
 .contact-item .icon {
@@ -148,19 +170,22 @@ body {
 .contact-item span:last-child {
     color: #555;
     font-size: 14px;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 .description {
-    background: #f8f9fa;
+    background: rgba(255, 255, 255, 0.9);
     padding: 20px;
     border-radius: 8px;
     border-left: 4px solid #667eea;
+    backdrop-filter: blur(10px);
 }
 
 .description p {
     color: #666;
     line-height: 1.6;
     font-size: 14px;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 .card-footer {
@@ -186,20 +211,40 @@ body {
     margin: 0 auto;
 }
 
-.theme-blue {
-    border-top: 4px solid #667eea;
+.theme-blue .card::before {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
-.theme-green {
-    border-top: 4px solid #28a745;
+.theme-blue .contact-item,
+.theme-blue .description {
+    border-left-color: #667eea;
 }
 
-.theme-purple {
-    border-top: 4px solid #6f42c1;
+.theme-green .card::before {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
 }
 
-.theme-orange {
-    border-top: 4px solid #fd7e14;
+.theme-green .contact-item,
+.theme-green .description {
+    border-left-color: #28a745;
+}
+
+.theme-purple .card::before {
+    background: linear-gradient(135deg, #6f42c1 0%, #d63384 100%);
+}
+
+.theme-purple .contact-item,
+.theme-purple .description {
+    border-left-color: #6f42c1;
+}
+
+.theme-orange .card::before {
+    background: linear-gradient(135deg, #fd7e14 0%, #ffc107 100%);
+}
+
+.theme-orange .contact-item,
+.theme-orange .description {
+    border-left-color: #fd7e14;
 }
 
 @media (max-width: 968px) {
